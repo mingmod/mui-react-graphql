@@ -15,11 +15,11 @@
 }
 
 .page-header::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
-  background-color: #1976D2;
+  background-color: #1976d2;
   width: 10px;
 }
