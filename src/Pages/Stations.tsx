@@ -8,14 +8,15 @@ export const StationsContext = createContext<Station[]>([]);
 export const Stations: React.FC<{ children?: React.ReactNode }> = ({
   children,
 }) => {
-  const { data, loading } = useStations();
-  return loading ? (
-    <Box sx={{ width: "100%" }}>
-      <LinearProgress />
-    </Box>
-  ) : (
+  const { data = [] } = useStations();
+  
+  return data.length ? (
     <StationsContext.Provider value={data}>
       <Outlet />
     </StationsContext.Provider>
+  ) : (
+    <Box sx={{ width: "100%" }}>
+      <LinearProgress />
+    </Box>
   );
 };
